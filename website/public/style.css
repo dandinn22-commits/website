@@ -181,12 +181,6 @@ a { text-decoration: none; color: inherit; }
 .hero-sub {
   font-size: 1.15rem;
   color: var(--text-light);
-  max-width: 560px;
-  margin: 0 auto 12px;
-}
-.hero-services {
-  font-size: 0.95rem;
-  color: var(--text-light);
   max-width: 620px;
   margin: 0 auto 32px;
 }
