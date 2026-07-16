@@ -24,6 +24,18 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -595,4 +607,149 @@ section h2 {
   .carousel-arrow { width: 34px; height: 34px; font-size: 1.2rem; }
   .hours-inner { text-align: center; }
   .hours-card { border-right: none; border-top: 4px solid var(--teal); }
+}
+
+/* ===== Accessibility ===== */
+
+/* Visible keyboard focus indicator on every interactive element */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.carousel-dot:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.form-group input:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(0, 137, 123, 0.25);
+}
+
+/* Skip-to-content link: hidden until focused via keyboard */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  right: 12px;
+  background: var(--blue-dark);
+  color: var(--white);
+  padding: 12px 20px;
+  border-radius: 0 0 10px 10px;
+  font-weight: 700;
+  z-index: 3000;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Respect users who ask the OS for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+/* Carousel pause/play control */
+.carousel-pause {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 14px auto 0;
+  padding: 8px 16px;
+  background: var(--white);
+  border: 1.5px solid var(--blue-light);
+  border-radius: 999px;
+  color: var(--blue-dark);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+.carousel-pause:hover { background: var(--blue-light); }
+
+/* ===== Accessibility widget ===== */
+.a11y-widget {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 2500;
+}
+.a11y-toggle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--blue-dark);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+}
+.a11y-toggle svg { width: 28px; height: 28px; fill: currentColor; }
+.a11y-toggle:hover { background: var(--blue); }
+.a11y-panel {
+  position: absolute;
+  bottom: 64px;
+  right: 0;
+  width: 260px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 18px;
+}
+.a11y-panel[hidden] { display: none; }
+.a11y-panel h2 {
+  font-size: 1rem;
+  color: var(--blue-dark);
+  margin-bottom: 12px;
+}
+.a11y-panel button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+  text-align: right;
+  background: var(--bg);
+  border: 1px solid var(--blue-light);
+  border-radius: 8px;
+  padding: 9px 12px;
+  margin-bottom: 8px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+}
+.a11y-panel button[aria-pressed="true"] {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+.a11y-panel button:hover { background: var(--blue-light); }
+.a11y-panel button[aria-pressed="true"]:hover { background: var(--blue-dark); }
+.a11y-panel .a11y-link {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.82rem;
+  text-decoration: underline;
+  color: var(--blue-dark);
+}
+
+/* States toggled by the accessibility widget */
+html.a11y-underline a { text-decoration: underline !important; }
+html.a11y-contrast { filter: invert(1) hue-rotate(180deg); background: #000; }
+html.a11y-stop-anim *,
+html.a11y-stop-anim *::before,
+html.a11y-stop-anim *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+@media (max-width: 600px) {
+  .a11y-widget { bottom: 90px; right: 14px; }
+  .a11y-panel { width: 230px; }
 }
