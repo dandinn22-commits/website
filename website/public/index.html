@@ -3,11 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>אינסטלציה בקליק | שירותי אינסטלציה מהירים בכל הארץ</title>
-  <meta name="description" content="אינסטלציה בקליק - שירותי אינסטלציה בכל הארץ, ימים א'-ו'. תיקון נזילות, פתיחת סתימות, החלפת צנרת ועוד. התקשרו עכשיו לקבלת מחיר הוגן.">
+  <title>אינסטלטור מקצועי - הגעה תוך 20 דקות | אינסטלציה בקליק</title>
+  <meta name="description" content="אינסטלטור מקצועי ומוסמך בכל הארץ, הגעה תוך 20 דקות. תיקון נזילות, פתיחת סתימות, החלפת צנרת ועוד - במחיר הוגן וברור מראש. התקשרו עכשיו לקבלת הצעת מחיר בטלפון!">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <!-- TODO: add <link rel="canonical"> once the site has a final live domain (see Render deploy) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": "אינסטלציה בקליק",
+    "image": "",
+    "telephone": "+972536726205",
+    "priceRange": "$$",
+    "areaServed": "IL",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IL"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "08:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "08:00", "closes": "14:00" }
+    ],
+    "sameAs": []
+  }
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">דלג לתוכן הראשי</a>
@@ -39,6 +60,11 @@
         </svg>
         <span class="logo-text">אינסטלציה <strong>בקליק</strong></span>
       </a>
+      <nav class="header-nav" aria-label="ניווט ראשי">
+        <a href="#services">שירותי אינסטלטור</a>
+        <a href="#reviews">ביקורות</a>
+        <a href="#contact">צור קשר</a>
+      </nav>
       <a href="tel:0536726205" class="btn btn-outline header-call">
         <span aria-hidden="true">📞</span> 053-672-6205
       </a>
@@ -50,7 +76,7 @@
   <section class="hero">
     <div class="container hero-inner">
       <span class="hero-eyebrow"><span aria-hidden="true">🔧</span> שירותי אינסטלציה מקצועיים</span>
-      <h1>אינסטלציה בקליק אחד</h1>
+      <h1>אינסטלטור מקצועי - אינסטלציה בקליק אחד</h1>
       <p class="hero-sub">אינסטלטור מקצועי ומוסמך עם ותק של 12 שנים - הגעה מהירה <strong>תוך 20 דקות</strong>. פתיחת סתימות, ביוב, אסלה, מקלחת, פיצוץ צנרת, איתור נזילות מים ועוד.</p>
       <div class="hero-actions">
         <a href="tel:0536726205" class="btn btn-primary"><span aria-hidden="true">📞</span> התקשרו עכשיו: 053-672-6205</a>
@@ -96,7 +122,7 @@
       <div class="section-head">
         <span class="eyebrow">מה אנחנו מציעים</span>
         <h2>השירותים שלנו</h2>
-        <p class="section-sub">פתרון לכל בעיה באינסטלציה - בבית ובעסק</p>
+        <p class="section-sub">אינסטלטור מקצועי לכל בעיה באינסטלציה - בבית ובעסק</p>
       </div>
       <div class="services-grid">
         <div class="service-card">
@@ -194,7 +220,7 @@
   </section>
 
   <!-- ===== Reviews (placeholder - replace with real reviews later) ===== -->
-  <section class="reviews">
+  <section class="reviews" id="reviews">
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">לקוחות מספרים</span>

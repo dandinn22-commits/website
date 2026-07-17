@@ -150,6 +150,20 @@ a { text-decoration: none; color: inherit; }
   color: var(--blue-dark);
 }
 .logo-text strong { font-weight: 800; }
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.header-nav a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.header-nav a:hover { color: var(--blue); }
+@media (max-width: 800px) {
+  .header-nav { display: none; }
+}
 
 /* ===== Hero ===== */
 .hero {
