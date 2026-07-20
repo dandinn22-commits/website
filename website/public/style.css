@@ -587,6 +587,12 @@ section h2 {
 }
 .footer-inner .logo { justify-content: center; margin-bottom: 12px; }
 .footer-inner .logo-text { color: var(--white); }
+.footer-logo {
+  background: var(--white);
+  padding: 6px;
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
 .footer-inner a { text-decoration: underline; }
 .footer-copy {
   margin-top: 10px;
