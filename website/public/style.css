@@ -140,14 +140,14 @@ a { text-decoration: none; color: inherit; }
 }
 .logo img {
   display: block;
-  border-radius: 50%;
-  object-fit: cover;
 }
 .site-logo-img {
-  height: 52px;
-  width: 52px;
+  height: 58px;
+  width: 58px;
+  aspect-ratio: 1 / 1;
   object-fit: contain;
   border-radius: 0;
+  flex-shrink: 0;
 }
 .logo-text {
   font-family: var(--font-heading);
